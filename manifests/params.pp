@@ -26,7 +26,7 @@
 # Copyright 2012 Puppet Labs, LLC
 #
 class stunnel::params {
-  case $osfamily {
+  case $::osfamily {
     Debian: {
       $conf_dir = '/etc/stunnel'
       $package  = 'stunnel4'
@@ -36,6 +36,9 @@ class stunnel::params {
       $conf_dir = '/etc/stunnel'
       $package = 'stunnel'
       $service = 'stunnel'
+    }
+    default: {
+      notify { "${::osfamily} is not supported.": }
     }
   }
 }
