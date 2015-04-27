@@ -105,7 +105,7 @@ define stunnel::tun(
     $chroot      = undef,
     $user,
     $group,
-    $pid_file    = "/${name}.pid",
+    $pid_file    = "/var/run/stunnel4/${name}.pid",
     $debug_level = '0',
     $log_dest    = "/var/log/${name}.log",
     $client,
