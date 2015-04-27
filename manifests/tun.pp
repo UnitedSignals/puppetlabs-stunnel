@@ -97,12 +97,12 @@
 # Copyright 2012 Puppet Labs, LLC
 #
 define stunnel::tun(
-    $certificate,
-    $private_key,
-    $ca_file,
-    $crl_file,
+    $certificate = undef,
+    $private_key = undef,
+    $ca_file     = undef,
+    $crl_file    = undef,
     $ssl_version = 'TLSv1',
-    $chroot,
+    $chroot      = undef,
     $user,
     $group,
     $pid_file    = "/${name}.pid",
