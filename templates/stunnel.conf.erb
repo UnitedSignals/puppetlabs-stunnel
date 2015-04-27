@@ -8,12 +8,14 @@ key = <%= private_key %>
 <% end %>
 <% if @ca_file %>
 CAfile = <%= ca_file %>
+verify = 2
+<% else %>
+verify = 1
 <% end %>
 <% if @crl_file %>
 CRLfile = <%= crl_file %>
 <% end %>
 sslVersion = <%= ssl_version_real %>
-verify = 2
 
 <% if @chroot %>
 chroot = <%= chroot %>
